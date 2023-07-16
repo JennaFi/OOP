@@ -7,7 +7,7 @@ public class Task_3 {
         Book book1 = new Book("Щегол", "Донна Тарт", true);
         Book book2 = new Book("Тайная история", "Донна Тарт", true);
         Book book3 = new Book("Война и Мир", "Лев Толстой", true);
-//        ArrayList<Book> catalog = new ArrayList<>();
+
         Library library = new Library();
         book1.displayInfo();
         book2.displayInfo();
@@ -17,11 +17,9 @@ public class Task_3 {
         library.addBook(book1);
         library.addBook(book3);
         library.displayAvailableBooks();
+        library.removeBook(book1);
+        library.displayAvailableBooks();
         library.searchByAuthor("Донна Тарт");
-
-
-
-
 
     }
 }
@@ -91,7 +89,6 @@ class Library {
             }
         }
 
-
     }
 
     public int searchByAuthor(String author) {
@@ -102,7 +99,7 @@ class Library {
             Book book = catalog.get(i);
             name = book.getAuthor();
             if (name.contains(author)) {
-                System.out.println(book.getTitle() + " " + book.getAuthor());
+                System.out.println("По поиску в каталоге есть следующие книги: " + book.getTitle() + " " + book.getAuthor());
                 res++;
             }
 

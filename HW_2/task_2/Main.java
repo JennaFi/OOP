@@ -16,7 +16,7 @@ public class Main {
 
 
 
-        Market market = new Market("Online Fashion", 25000);
+        Market market = new Market("Online Fashion");
         market.orders = new ArrayList<>();
         market.orders.add(order1.getNumber());
         market.orders.add(order2.getNumber());

@@ -5,7 +5,6 @@ import java.util.*;
 public class Market implements IMarket {
     String name;
 
-    int capacity;
     int order;
     private int users;
 
@@ -17,9 +16,8 @@ public class Market implements IMarket {
     List<Integer> orders = new ArrayList<Integer>();
 
 
-    public Market(String name, int capacity){
+    public Market(String name){
         this.name = name;
-        this.capacity = capacity;
         int order;
     }
 
@@ -29,14 +27,6 @@ public class Market implements IMarket {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
     }
 
     public int getOrder() {

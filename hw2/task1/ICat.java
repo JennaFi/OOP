@@ -1,4 +1,4 @@
-package HW_2.task_1;
+package hw_2.task_1;
 
 public interface ICat {
 

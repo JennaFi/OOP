@@ -1,4 +1,4 @@
-package HW_2.task_2;
+package hw_2.task_2;
 
 import java.util.*;
 
@@ -13,12 +13,12 @@ public class Market implements IMarket {
     }
 
     private Queue<String> queue = new LinkedList<>();
-    List<Integer> orders = new ArrayList<Integer>();
+    Queue<Integer> orders = new LinkedList<>();
 
 
     public Market(String name){
         this.name = name;
-        int order;
+
     }
 
     public String getName() {
@@ -33,24 +33,25 @@ public class Market implements IMarket {
         return order;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
-    }
-
     @Override
     public void QueueBehaviourIn(String User, int order) {
         queue.add(User);
         users += 1;
         orders.add(order);
         System.out.println("There is your order, " + User + ": " + order );
+        System.out.println("the order " + order + " has been placed in a queue");
         update();
     }
 
     @Override
     public void QueueBehaviourOut(String User, int order) {
-        queue.remove(User);
-        users-=1;
-        orders.remove(order);
+        if(users != 0) {
+            queue.remove(User);
+            users-=1;
+
+            orders.remove(order);
+
+        }
 
         update();
     }
@@ -65,8 +66,11 @@ public class Market implements IMarket {
 
     @Override
     public void MarketBehaviourOut(String User) {
-        System.out.println("Have a good day!" + User);
-        users -=1;
+        if(users != 0) {
+            System.out.println("Have a good day!" + User);
+            users -=1;
+        }
+
         update();
 
     }
@@ -75,6 +79,7 @@ public class Market implements IMarket {
     public void update() {
         System.out.println("There are " + users + " users online now");
         System.out.println(orders.size() + " orders placed");
+
 
     }
 }

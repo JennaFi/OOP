@@ -1,4 +1,4 @@
-package HW_2.task_2;
+package hw_2.task_2;
 
 public class Order {
     public int number;
@@ -20,6 +20,9 @@ public class Order {
         this.number = number;
     }
 
+    public String getItem() {
+        return item;
+    }
 
     public void setItem(String item, int iD) {
         this.item = item;

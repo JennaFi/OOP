@@ -1,4 +1,4 @@
-package HW_2.task_2;
+package hw_2.task_2;
 
 public class Item {
     public String name;
@@ -19,12 +19,27 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-
     public int getiD() {
         return iD;
     }
 
     public void setiD(int iD) {
         this.iD = iD;
+    }
+
+    public boolean isInStock() {
+        return inStock;
+    }
+
+    public void setInStock(boolean inStock) {
+        this.inStock = inStock;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 }

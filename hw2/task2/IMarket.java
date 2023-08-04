@@ -1,4 +1,4 @@
-package HW_2.task_2;
+package hw_2.task_2;
 
 public interface IMarket {
 

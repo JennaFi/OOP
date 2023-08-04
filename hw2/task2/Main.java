@@ -1,6 +1,7 @@
-package HW_2.task_2;
+package hw_2.task_2;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Main {
 
 
         Market market = new Market("Online Fashion");
-        market.orders = new ArrayList<>();
+        market.orders = new LinkedList<>();
         market.orders.add(order1.getNumber());
         market.orders.add(order2.getNumber());
         market.orders.add(order3.getNumber());
@@ -32,6 +33,7 @@ public class Main {
         System.out.println("You've ordered " + order1.item + ", the code is " + order1.iD + ", your order's number is: " + order1.number);
         market.QueueBehaviourIn("Steve",order2.getNumber());
         System.out.println("You've ordered " + order2.item);
+        market.QueueBehaviourOut("Steve",order2.getNumber());
         market.QueueBehaviourIn("Leni",order3.getNumber());
         System.out.println("You've ordered " + order3.item);
 
